@@ -1,0 +1,620 @@
+@font-face {
+  font-family: Ghoulish Fright AOE;
+  src: url("../fonts/GhoulFriAOE.ttf"); }
+@font-face {
+  font-family: Calibri;
+  src: url("../fonts/calibri.ttf");
+  font-weight: regular; }
+@font-face {
+  font-family: Calibri;
+  src: url("../fonts/calibri_bold.ttf");
+  font-weight: bold; }
+@font-face {
+  font-family: Proxima Nova;
+  src: url("../fonts/ProximaNova-Regular.woff"); }
+body {
+  background: #0c1514;
+  color: #fff; }
+
+h1 {
+  color: #63c5bc; }
+
+.faded {
+  color: #777; }
+
+#quiz-counter {
+  color: #88449a; }
+
+.quiz-container {
+  padding: 0.25em;
+  max-width: 650px;
+  margin: 1em auto; }
+
+.quiz-container a {
+  text-decoration: none;
+  color: #333; }
+
+#quiz-header,
+#quiz-start-screen,
+#quiz-results-screen,
+#quiz-counter {
+  text-align: center; }
+
+.question {
+  font-size: 1.25em; }
+
+.answers {
+  list-style: none;
+  padding: 0; }
+
+.answers a {
+  display: block;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  background: #fff; }
+
+.answers a.correct {
+  background: #090; }
+
+.answers a.incorrect {
+  background: #c00; }
+
+.answers a.correct,
+.answers a.incorrect {
+  color: #fff; }
+
+#quiz-controls {
+  background: #63c5bc;
+  color: #111;
+  padding: 0.25em 0.5em 0.5em;
+  text-align: center; }
+
+#quiz-results {
+  font-size: 1.25em; }
+
+#quiz-buttons a,
+.quiz-container .quiz-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #88449a;
+  color: #fff; }
+
+#quiz-buttons a {
+  background: #fff;
+  color: #333; }
+
+/* Quiz State Overrides */
+.quiz-results-state #quiz-controls {
+  background: none;
+  padding: 0; }
+
+.quiz-results-state #quiz-buttons a {
+  background: #88449a;
+  color: #fff; }
+
+@font-face {
+  font-family: Ghoulish Fright AOE;
+  src: url("../fonts/GhoulFriAOE.ttf"); }
+@font-face {
+  font-family: Calibri;
+  src: url("../fonts/calibri.ttf");
+  font-weight: regular; }
+@font-face {
+  font-family: Calibri;
+  src: url("../fonts/calibri_bold.ttf");
+  font-weight: bold; }
+@font-face {
+  font-family: Proxima Nova;
+  src: url("../fonts/ProximaNova-Regular.woff"); }
+.quiz-container {
+  max-width: 910px;
+  width: 100%; }
+
+#quiz-buttons a, .quiz-container .quiz-button {
+  font-family: "Ghoulish Fright AOE";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 106%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 50px;
+  background: -webkit-gradient(linear, left top, right top, from(#E44D26), to(#F16529));
+  background: linear-gradient(90deg, #E44D26 0%, #F16529 100%);
+  border-radius: 30px;
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto; }
+  #quiz-buttons a:hover, .quiz-container .quiz-button:hover {
+    background: -webkit-gradient(linear, left top, right top, from(#F85032), to(#E73827));
+    background: linear-gradient(90deg, #F85032 0%, #E73827 100%);
+    border-radius: 30px; }
+
+.answers {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px; }
+  .answers li {
+    width: 47%;
+    height: auto;
+    margin: 10px; }
+
+.answers a p {
+  font-family: "Ghoulish Fright AOE";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 106%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: transparent;
+  border: 1px solid #F59000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 17px;
+  height: 70px !important; }
+  .answers a p:hover {
+    -webkit-filter: drop-shadow(0px 1px 1px #F59000) drop-shadow(-1px 0px 1px #F59000) drop-shadow(1px 0px 1px #F59000);
+            filter: drop-shadow(0px 1px 1px #F59000) drop-shadow(-1px 0px 1px #F59000) drop-shadow(1px 0px 1px #F59000); }
+
+.answers a {
+  background-color: transparent; }
+
+.question {
+  font-family: "Ghoulish Fright AOE";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 106%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 70px; }
+
+.answers a.correct {
+  background: transparent; }
+
+.answers a.incorrect {
+  background: transparent; }
+
+.answers a.correct p {
+  background: transparent;
+  border: 1px solid #098223;
+  -webkit-filter: drop-shadow(0px 1px 1px #098223) drop-shadow(-1px 0px 1px #098223) drop-shadow(1px 0px 1px #098223);
+          filter: drop-shadow(0px 1px 1px #098223) drop-shadow(-1px 0px 1px #098223) drop-shadow(1px 0px 1px #098223); }
+
+.answers a.incorrect p {
+  border: 1px solid #FA0A0A;
+  background: transparent;
+  -webkit-filter: drop-shadow(0px 1px 1px #FA0A0A) drop-shadow(-1px 0px 1px #FA0A0A) drop-shadow(1px 0px 1px #FA0A0A);
+          filter: drop-shadow(0px 1px 1px #FA0A0A) drop-shadow(-1px 0px 1px #FA0A0A) drop-shadow(1px 0px 1px #FA0A0A); }
+
+#quiz-controls {
+  background: transparent; }
+
+.body-questions {
+  background: url("../img/backgraund-quiz.png") 50% 10%/cover no-repeat;
+  background-color: #171616; }
+
+#quiz-response {
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 106%;
+  text-align: left;
+  color: #FFFFFF;
+  margin: 80px 0px;
+  position: relative; }
+
+#quesions__img {
+  width: 100%; }
+  #quesions__img .display-none {
+    display: none; }
+  #quesions__img .display-block {
+    display: block;
+    margin-top: 80px; }
+  #quesions__img img {
+    display: none;
+    margin: 0 auto; }
+
+.quiz-start-screen-text {
+  font-family: Ghoulish Fright AOE;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 106%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 40px auto 55px; }
+
+.mobile-1 {
+  position: absolute;
+  bottom: 637px;
+  left: calc(50% - 456px); }
+  @media only screen and (max-width: 1000px) {
+    .mobile-1 {
+      display: none !important; } }
+
+.mobile-2 {
+  position: absolute;
+  bottom: 944px;
+  left: calc(50% - 456px); }
+  @media only screen and (max-width: 1000px) {
+    .mobile-2 {
+      display: none !important; } }
+
+.mobile-3 {
+  position: absolute;
+  bottom: 1093px;
+  left: calc(50% - 456px); }
+  @media only screen and (max-width: 1000px) {
+    .mobile-3 {
+      display: none !important; } }
+
+.mobile-5 {
+  position: absolute;
+  bottom: 594px;
+  left: calc(50% - 450px); }
+  @media only screen and (max-width: 1000px) {
+    .mobile-5 {
+      display: none !important; } }
+
+@font-face {
+  font-family: Ghoulish Fright AOE;
+  src: url("../fonts/GhoulFriAOE.ttf"); }
+@font-face {
+  font-family: Calibri;
+  src: url("../fonts/calibri.ttf");
+  font-weight: regular; }
+@font-face {
+  font-family: Calibri;
+  src: url("../fonts/calibri_bold.ttf");
+  font-weight: bold; }
+@font-face {
+  font-family: Proxima Nova;
+  src: url("../fonts/ProximaNova-Regular.woff"); }
+.win {
+  background: url("../img/backgraund-quiz.png") 50% 10%/cover no-repeat;
+  background-color: #171616; }
+  @media (max-width: 600px) {
+    .win {
+      margin-bottom: 50px; } }
+  .win .win__container {
+    max-width: 950px;
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #000000;
+    -webkit-box-shadow: 0px 4px 44px 1px rgba(163, 5, 5, 0.12);
+            box-shadow: 0px 4px 44px 1px rgba(163, 5, 5, 0.12);
+    border-radius: 6px;
+    max-width: 1280px;
+    margin: 100px auto; }
+    @media (max-width: 1170px) {
+      .win .win__container {
+        max-width: 950px;
+        margin: 100px auto; } }
+  @media (max-width: 1170px) and (max-width: 979px) {
+    .win .win__container {
+      width: 95%; } }
+
+  .win__baner {
+    width: 100%; }
+    .win__baner img {
+      display: block;
+      width: 95%;
+      height: auto;
+      margin: 35px auto 0px;
+      border-radius: 6px; }
+      @media (max-width: 979px) {
+        .win__baner img {
+          width: 100%; } }
+      @media (max-width: 600px) {
+        .win__baner img {
+          margin: 0 auto; } }
+  .win__image-item {
+    margin-top: 35px; }
+  .win__text-end {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 106%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 35px; }
+  .win__text {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 106%;
+    color: #FFFFFF;
+    margin-top: 35px; }
+  .win__text-code {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F59000;
+    text-shadow: 0px 0px 18px rgba(245, 144, 0, 0.77);
+    margin-top: 35px; }
+  .win__text-two {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 106%;
+    color: #FFFFFF;
+    margin-top: 35px; }
+  .win__bonus {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F59000;
+    text-shadow: 0px 0px 18px rgba(245, 144, 0, 0.77);
+    margin-top: 35px;
+    padding: 20px 92px;
+    border: 7px double rgba(245, 144, 0, 0.77); }
+    @media (max-width: 600px) {
+      .win__bonus {
+        padding: 15px 42px; } }
+  .win__link {
+    font-family: "Ghoulish Fright AOE";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-top: 50px;
+    display: block;
+    padding: 16px 0px;
+    border-radius: 30px;
+    max-width: 264px;
+    width: 100%;
+    background-color: #F85032;
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s; }
+  .win__link:hover {
+    background-color: #0B650B; }
+  .win__img-footer {
+    margin-top: 75px; }
+    @media (max-width: 600px) {
+      .win__img-footer {
+        margin-top: 50px; } }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.body {
+  background: url("../img/backgraund-main.png") 50% 0/cover no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000000;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.wrapper {
+  min-height: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden; }
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden; }
+
+.box__container {
+  max-width: 1280px;
+  margin: 0 auto; }
+  @media (max-width: 1170px) {
+    .box__container {
+      margin: 0 20px; } }
+
+.quesions__container {
+  max-width: 950px;
+  margin: 10% auto;
+  background: #000000;
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px; }
+  @media (max-width: 1170px) {
+    .quesions__container {
+      margin: 200px auto; } }
+
+h1 {
+  margin-top: 147px;
+  color: green;
+  font-family: "Ghoulish Fright AOE"; }
+
+.box {
+  max-width: 1050px;
+  width: 100%; }
+  .box .backcolor {
+    background: #000000;
+    border: 1px solid #000000;
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px; }
+  .box h1 {
+    font-family: "Ghoulish Fright AOE";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 150px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(236, 233, 230, 0.93)), to(rgba(255, 255, 255, 0.93)));
+    background: linear-gradient(90deg, rgba(236, 233, 230, 0.93) 0%, rgba(255, 255, 255, 0.93) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent; }
+    @media (max-width: 768px) {
+      .box h1 {
+        font-size: 60px;
+        margin-top: 50px; } }
+  .box h2 {
+    font-family: "Ghoulish Fright AOE";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(236, 233, 230, 0.93)), to(rgba(255, 255, 255, 0.93)));
+    background: linear-gradient(90deg, rgba(236, 233, 230, 0.93) 0%, rgba(255, 255, 255, 0.93) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-top: 206px; }
+    @media (max-width: 768px) {
+      .box h2 {
+        margin-top: 40px;
+        font-size: 40px; } }
+  .box .info-block-one {
+    margin-top: 206px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (max-width: 768px) {
+      .box .info-block-one {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        margin-top: 40px;
+        text-align: center; } }
+    .box .info-block-one p {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 106%;
+      color: #FFFFFF;
+      max-width: 480px;
+      width: 100%; }
+  .box .info-block-two {
+    margin-top: 106px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (max-width: 768px) {
+      .box .info-block-two {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-top: 0px;
+        text-align: center; } }
+    .box .info-block-two p {
+      max-width: 480px;
+      width: 100%;
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 106%;
+      color: #FFFFFF; }
+  .box .button {
+    font-family: "Ghoulish Fright AOE";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 70px;
+    background: -webkit-gradient(linear, left top, right top, from(#E44D26), to(#F16529));
+    background: linear-gradient(90deg, #E44D26 0%, #F16529 100%);
+    border-radius: 30px;
+    display: block;
+    max-width: 320px;
+    width: 100%;
+    margin: 120px auto;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+    .box .button:hover {
+      background: -webkit-gradient(linear, left top, right top, from(#F85032), to(#E73827));
+      background: linear-gradient(90deg, #F85032 0%, #E73827 100%);
+      border-radius: 30px; }
+    @media (max-width: 768px) {
+      .box .button {
+        margin: 100px auto; } }
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 6px;
+  background: #000; }
+
+::-webkit-scrollbar-thumb {
+  background: #F59000;
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px #F59000; }
+
+::-webkit-scrollbar-corner {
+  background: #000; }
+
+/*# sourceMappingURL=style.css.map */
